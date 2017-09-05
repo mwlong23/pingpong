@@ -23,11 +23,13 @@ public def ping_pong()
   # array = Array.new
   array=[]
   x = 0
-  while (x < 5)
+  while (x < 15)
     x = x + 1
-    if !(x.eql?(3) || x.eql?(5))
+    if !((x.%(3).eql?(0)) || (x.%(5).eql?(0)))
       array.push(x)
-    elsif (x.%(5).eql?(0))
+    elsif ((x.%(3).eql?(0)) && (x.%(5).eql?(0)))
+      array.push("ping-pong")
+    elsif(x.%(5).eql?(0))
       array.push("pong")
     else
       array.push("ping")
